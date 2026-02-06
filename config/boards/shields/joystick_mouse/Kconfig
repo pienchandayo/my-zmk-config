@@ -1,0 +1,6 @@
+if SHIELD_JOYSTICK_MOUSE
+
+config ZMK_KEYBOARD_NAME
+    default "JoystickMouse"
+
+endif

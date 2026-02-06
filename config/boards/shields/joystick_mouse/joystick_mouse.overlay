@@ -1,0 +1,19 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios
+            = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
+
+/* ジョイスティック（ADC）の設定は一旦コメントアウトして、
+   まずは「ボタン1つのキーボード」としてビルドが通るか確認しましょう */
+/*
+&adc {
+    status = "okay";
+};
+*/
