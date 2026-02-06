@@ -1,25 +1,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
-/* ジョイスティックをマウスとして定義 */
-&adc {
-    status = "okay";
-};
-
 / {
-    /* アナログ入力の設定：P0.02(AIN0) と P0.29(AIN5) */
-    zephyr,user {
-        io-channels = <&adc 0>, <&adc 5>;
-    };
-
-    /* キーマップ本体 */
     keymap {
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                /* P0.06 に繋いだスイッチを「左クリック」に設定 */
                 &mkp LCLK
             >;
         };
